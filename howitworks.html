@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How it Works</title>
+    <link rel="stylesheet" href="howitworks.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <script src="darkmode.js" defer></script>
+</head>
+<body class="darkmode">
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="index.html" id="navbar__logo">PETRI SIMULATOR</a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="index.html" class="navbar__links">Home</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="antibiotics.html" class="navbar__links">Antibiotics</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="Thermophiles.html" class="navbar__links">Thermophiles</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="Mesophiles.html" class="navbar__links">Mesophiles</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="Psychrophiles.html" class="navbar__links">Psychrophiles</a>
+                </li>
+            </ul>
+            <button id="theme-switch">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z"/></svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+
+    <div class="main">
+        <div class="main__container">
+            <div class="main__content">
+                <h1>PETRI DISH SIMULATOR</h1>
+                <p>All types of bacteria have a range of temperature where they can function properly. And they have an optimal temperature where they are adapted to work the fastest.</p>
+                <p>If the temperature is lower than the optimal temperature, the enzymes within the bacteria won't work efficiently, thus growth rate will be lower.</p>
+                <p>If the temperature is higher than the optimal temperature, the active sites of the enzymes within the bacteria will denature, thus growth rate will be lower.</p>
+                <div class="main__img--container">
+                    <img src="images/graphs.jpg" alt="Image of graph describing the how the growth rate of different types
+                    bacteria changes depending on temperature" id="main__img"/>
+                </div>
+                <h2><a href="Mesophiles.html">Mesophiles</a></h2>
+                <p>Mesophoile bacteria are microorganisms which thrive in moderate temperatures, usually between 20°C and 45°C. 
+                    They are the most common type of bacteria found in the human body and are responsible for many important processes, including digestion and fermentation.</p>
+                <p>Mesophiles are also used in various industrial applications, such as the production of yogurt, cheese, and other fermented foods. 
+                    These bacteria are typically aerobic, meaning they require oxygen to grow, but some can also survive in anaerobic conditions.</p>
+                <p>Mesophiles play a crucial role in maintaining the balance of ecosystems and are essential for the health of humans and animals alike.</p>
+                <p>They have an optimal temperature around 37°C.</p>
+                <h2><a href="Thermophiles.html">Thermophiles</a></h2>
+                <p>Thermophile bacteria are microorganisms which thrive in high temperatures, usually between 45°C and 80°C. 
+                    They are commonly found in extreme environments such as hot springs, geothermal vents, and compost heaps, where most other life forms would tap out.</p>
+                <p>Thermophiles are used in various industrial applications, including the production of enzymes for biofuels, PCR (Polymerase Chain Reaction) in genetic testing,
+                     and waste treatment. These bacteria are typically aerobic, requiring oxygen to grow, though some species can also survive in anaerobic conditions.</p>
+                <p>Thermophiles play a crucial role in breaking down organic matter in high-temperature environments and contribute significantly to nutrient cycling in these ecosystems.</p>
+                <p>They have an optimal temperature around 60°C or higher.</p>
+                <h2><a href="Psychrophiles.html">Psychrophiles</a></h2>
+                <p>Psychrophile bacteria are microorganisms which thrive in cold temperatures, typically between -20°C and 10°C. 
+                    They are commonly found in polar regions, deep ocean waters, glaciers, and permafrost — basically, anywhere that would make most life freeze solid.</p>
+                <p>Psychrophiles are valuable in scientific research and industry, especially in biotechnology fields that require enzymes that function at low temperatures, 
+                    such as in food preservation and cold-wash laundry detergents. These bacteria can be aerobic or anaerobic, depending on their environment.</p>
+                <p>Psychrophiles play a vital role in breaking down organic matter in cold ecosystems and contribute to nutrient cycling in environments where most other 
+                    microbes can't survive.</p>
+                <p>They have an optimal temperature around 4°C or lower.</p>
+                <br>
+                <h1>ANTIBIOTICS</h1>
+                <h2><a href="antibiotics.html">Antibiotic Simulator</a></h2>
+                <p>Antibiotics are substances that can kill or inhibit the growth of bacteria. They are used to treat bacterial 
+                    infections and are often prescribed by doctors. However, not all antibiotics work against all types of bacteria. 
+                    Some antibiotical substances are stronger than others to certain bacterias.</p>
+                <p>In a lab, to measure the effectiveness of certain antibacerial substances, scientists often use multidiscs. Where each arm will have a different antibacterial substance. 
+                    The strongest antibacterial will kill more bacteria. This leaves a black space on the petri dish, called the inhibition zone. 
+                    This zone will be clear in colour as no bacteria grows. 
+                    The bigger the inhibition zone, the more effective the antibiotic is in killing that certain bacteria.</p>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html> 
+
+
+
+

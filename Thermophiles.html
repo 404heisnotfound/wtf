@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thermophiles</title>
+    <script src="thermo.js"></script>
+    <link rel="stylesheet" href="mystyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,900&display=swap" rel="stylesheet">
+    <script src="darkmode.js" defer></script>
+</head>
+<body class="darkmode"> 
+
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="index.html" id="navbar__logo">PETRI SIMULATOR</a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="index.html" class="navbar__links">Home</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="howitworks.html" class="navbar__links">How it Works</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="antibiotics.html" class="navbar__links">Antibiotics</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="Mesophiles.html" class="navbar__links">Mesophiles</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="Psychrophiles.html" class="navbar__links">Psychrophiles</a>
+                </li>
+            </ul>
+            <button id="theme-switch">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z"/></svg>
+            </button>
+        </div>
+        <script>
+            const menu = document.querySelector('#mobile-menu');
+            const menuLinks = document.querySelector('.navbar__menu');
+
+            menu.addEventListener('click', function() {
+                menu.classList.toggle('is-active');
+                menuLinks.classList.toggle('active');
+            })
+        </script>
+    </nav>
+
+    <canvas id="circle" width="500" height="500"  style="background-color: #fffcf2" ></canvas>
+
+    <div class = "controls">
+        <div class="tooltip">
+            <button tabindex="0" id="resetbutton" class="Button1" onclick="resetCanvas()">Reset</button>
+            <span class="tooltiptext">Resets the simulation to its initial state</span>
+        </div>
+
+        <div class="tooltip">
+            <button id="startbutton" class="Button2" onclick="validateAndStart()">Start</button>
+            <span class="tooltiptext">Starts the simulation with the selected parameters</span>
+        </div>
+
+        <div class="tooltip">Time(hrs):
+            <span class="tooltiptext">How long will the experiment run for</span>
+        </div> 
+        <div class="tooltip">
+            <input type="range" value="0" min="0" max="72" step="1" id="timeslider" oninput="this.nextElementSibling.value = this.value">
+            <output>0</output>
+        </div>
+
+        <div class="tooltip">Temperature(°C):
+            <span class="tooltiptext">Select a simulation temperature between 49°C and 79°C </span>
+        </div> 
+        <input type="number" min="49" max="79" id="temp" onkeydown="return false;"><br>
+
+        <div class="tooltip">
+            <a id="downloadBtn" onclick='generateDownload()' target="_blank"> <!--Download button for the information-->
+                <button class="Button5" >Download TXT</button>
+            </a>
+            <span class="tooltiptext">Lets you download the simulation results as a text file</span>
+        </div>
+    </div>
+    <div class = "tooltipSA">
+        <p id="surfaceArea">Surface Area: 0.00 cm²</p>
+        <span class="tooltiptext">The surface area covered by the bacterial colonies</span>
+    </div>
+
+</body>
+</html>

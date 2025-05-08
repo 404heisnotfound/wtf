@@ -1,0 +1,595 @@
+:root {
+    --color-background: #fffcf2;
+    --color-dark: #131313;
+    --color-light: #ffffff;
+    --color-primary: #63a2f3;
+    --color-primary-hover: #217bf1;
+    --color-tooltip-bg: #000000;
+    --color-tooltip-text: #fff;
+    --navbar-bg: #131313;
+    --theme-button-bg: #a1a1a1;
+    --mobile-menu-bg: #131313;
+}
+
+.darkmode{
+    --color-background: #181818;
+    --color-dark: #fffcf2;
+    --color-light: #ffffff;
+    --color-primary: #63a2f3;
+    --color-primary-hover: #217bf1;
+    --color-tooltip-bg: #000000;
+    --color-tooltip-text: #fff;
+    --navbar-bg: #0D0D0D;
+    --theme-button-bg: #313131;
+    --mobile-menu-bg: #0D0D0D;
+}
+
+#theme-switch{
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--theme-button-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 100px;
+    right: 20px;
+}
+
+#theme-switch svg {
+    fill: var(--color-dark);
+}
+
+#theme-switch svg:last-child {
+    display: none;
+}
+
+.darkmode #theme-switch svg:first-child {
+    display: none;
+}
+.darkmode #theme-switch svg:last-child {
+    display: block;
+}
+
+
+/* NavBar */
+.navbar{
+    background: var(--navbar-bg);
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.navbar__container {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+#navbar__logo{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: rgb(99, 162, 243);
+}
+
+.navbar__menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    text-align: center;
+}
+
+.navbar__item {
+    height: 80px;
+}
+
+.navbar__links{
+    color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 0 1rem;
+    height: 100%;
+}
+
+.navbar__links:hover {
+    color: var(--color-primary);
+    transition: all 0.3s ease ;
+}
+
+
+/* Mobile responsive NavBar */
+@media screen and (max-width: 960px) {
+    .navbar__container {
+        display: flex;
+        justify-content: space-between;
+        height: 80px;
+        z-index: 1;
+        width: 100%;
+        max-width: 1300px;
+        padding: 0;
+    }
+
+    .navbar__menu {
+        display: grid;
+        grid-template-columns: auto;
+        margin: 0;
+        width: 100%;
+        position: absolute;
+        top: -1000px;
+        opacity: 0;
+        transition: all 0.5s ease;
+        height: 50vh;
+        z-index: -1;
+        background-color: var(--mobile-menu-bg);
+    }
+
+    /* .navbar__menu.active {
+        background: var(--mobile-menu-bg);
+        top: 100%;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: 9;
+        height: 50vh;
+        font-size: 1.5rem;
+    } */
+
+    .navbar__menu.active {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: var(--mobile-menu-bg);
+        height: auto;
+        z-index: 999;
+        opacity: 1;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem 0;
+        font-size: 1.5rem;
+    }
+
+    #navbar__logo {
+        padding-left: 25px;
+    }
+
+    .navbar__toggle .bar {
+
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        background: #ffffff;
+    }
+
+    .navbar__item {
+        width: 100%;
+    }
+
+    .navbar__links {
+        text-align: center;
+        padding: 2rem;
+        width: 100%;
+        display:table;
+    }
+
+    #mobile-menu {
+        position: absolute;
+        top: 20%;
+        right: 5%;
+        transform: translate(5%, 20%);
+    }
+    
+    .navbar__toggle .bar {
+        display: block;
+        cursor: pointer;
+    }
+
+    #mobile-menu.is-active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    #mobile-menu.is-active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    #mobile-menu.is-active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+/* Hero Section for Home Page*/
+
+.main__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-self: center;
+    margin: 0 auto;
+    height: 90vh;
+    background-color: var(--color-background);
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    padding: 0 50px;
+}
+
+.main__content h1 {
+    font-size: 4rem;
+    color: var(--color-dark);
+}
+
+.main__content h2 {
+    font-size: 4rem;
+    color: var(--color-dark);
+}
+
+.main__content h3 {
+    margin-top: 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-dark);
+}
+
+.main__btn{
+    font-family: "Roboto", sans-serif;
+    font-size: 1rem;
+    background-color: var(--color-primary);
+    padding: 14px 32px;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    margin-top : 2rem;
+    position: relative;
+    outline: none;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.main__btn a {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    text-decoration: none;
+}
+ 
+.main__btn:hover{
+    background-color: var(--color-primary-hover);
+    transition: all 0.3s ease;
+}
+
+.main__img--container {
+    text-align: center;
+}
+
+#main__img{
+    height: 80%;
+    width: 80%; 
+}
+
+/* Mobile Responsive Hero Section for home page */
+
+@media screen and (max-width: 768px) {
+    .main__container {
+        display: grid;
+        grid-template-columns: auto;
+        align-items: center;
+        justify-self: center;
+        margin: 0 auto;
+        height: 90vh;
+        background-color: var(--color-background);
+        z-index: 1;
+        width: 90%;
+    }
+
+    
+    .main__content {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    .main__content h1 {
+        font-size: 2.5rem;
+        margin-top: 2rem;
+    }
+
+    .main__content h2 {
+        font-size: 2.5rem;
+    }
+
+    .main__content h3 {
+        margin-top: 1rem;
+        font-size: 2rem;
+        color: var(--color-dark);
+    }
+
+    .controls {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .Button1, .Button2 {
+        width: 80%;
+        font-size: 1rem;
+    }
+
+    input[type="range"], input[type="number"] {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .main__content h1 {
+        font-size: 2rem;
+        margin-top: 3rem;
+    }
+
+    .main__content h2 {
+        font-size: 2rem;
+    }
+
+    .main__content h3 {
+        margin-top: 2rem;
+        font-size: 1.5rem;
+        color: var(--color-dark);
+    }
+
+    .main__btn{
+        padding: 12px 36px;
+        margin: 2.5rem 0;
+    }
+}
+
+
+
+
+
+
+
+body{
+    align-content: center;
+    margin: 0px;
+}
+
+body{
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: italic;
+    font-size: medium;
+    background-color: var(--color-background);
+}
+
+canvas {
+    left: 50%;
+    transform:translate(-50%, 10%);
+    position: absolute; 
+    border-radius: 500px;
+    border: black 3px solid;
+}
+
+
+.Button1 {
+    border-radius: 10px;
+    padding: 15px;
+    background-image: linear-gradient(to right, #d61616, #f81919);
+    font-size: large;
+    font-family: "Roboto", sans-serif;
+    outline: none;
+    
+}
+
+.Button1:focus {
+    outline: 2px solid rgb(0, 0, 0); /* Blue outline, but you can choose any color */
+    outline-offset: 2px; /* Slightly offset the outline so it's more visible */
+}
+
+.Button2 {
+    border-radius: 10px;
+    padding: 15px;
+    background-image: linear-gradient(to right, #428139, #33f819);
+    font-size: large;
+    font-family: "Roboto", sans-serif;
+    outline: none;
+}
+
+.Button2:focus {
+    outline: 2px solid rgb(0, 0, 0); /* Blue outline, but you can choose any color */
+    outline-offset: 2px; /* Slightly offset the outline so it's more visible */
+}
+
+.Button3 {
+    border-radius: 10px;
+    padding: 15px;
+    background-image: linear-gradient(to right, #428139, #33f819);
+    font-size: large;
+    font-family: "Roboto", sans-serif;
+    outline: none;
+}
+
+
+.Button4 {
+    border-radius: 10px;
+    padding: 15px;
+    background-image: linear-gradient(to right,#d61616, #f81919 );
+    font-size: large;
+    font-family: "Roboto", sans-serif;
+    outline: none;
+}
+
+.Button5 {
+    border-radius: 10px;
+    padding: 10px;
+    background-image: linear-gradient(to right,#333333, #666666 );
+    font-size: small;
+    font-family: "Roboto", sans-serif;
+    outline: none;
+    color: white;
+}
+
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 600px;
+    gap: 10px;
+}
+
+
+.tempinput {
+    height: 25px;
+    width: 80px;
+
+}
+
+/* @media screen and (max-width: 960px) {
+    .controls{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 600px;
+        gap: 10px;
+    }
+}
+
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ToolTip for Surface area*/
+
+.tooltipSA {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 10px;
+    color: var(--color-dark);
+
+    
+}
+
+.tooltipSA .tooltiptext {
+    visibility: hidden;
+    width: 115px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 130%;
+    left: 50%;
+    margin-left: -55px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    transition-delay: 0.5s;       /* Transition delay*/
+    font-size: 13px;
+}
+
+.tooltipSA .tooltiptext::after {  /*Adding an arrow for text box */
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+
+/* Show the tooltip on hover */
+.tooltipSA:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/* CSS for tooltip */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    color: var(--color-dark);
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 115px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 130%;
+    left: 50%;
+    margin-left: -55px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    transition-delay: 0.5s;
+    font-size: 13px;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
